@@ -7,6 +7,11 @@
     - name: Set a fact with the LLM text
       ansible.builtin.set_fact:
         gpt_generated_prompt: "{{ gpt_response.json.choices[0].text }}"
+    
+    - name: Pass lightspeed_prompt to next workflow node
+      ansible.builtin.set_stats:
+        data:
+          lightspeed_prompt: "{{ gpt_generated_prompt }}"
 
     - name: Show the LLM response text
       ansible.builtin.debug:
