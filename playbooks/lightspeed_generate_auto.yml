@@ -15,7 +15,7 @@
           Authorization: "Bearer {{ lightspeed_wca_token }}"
         body_format: json
         body:
-          text: "{{ gpt_generated_prompt }}"
+          text: "{{ lightspeed_prompt }}"
       register: response
 
     - name: Display API response
