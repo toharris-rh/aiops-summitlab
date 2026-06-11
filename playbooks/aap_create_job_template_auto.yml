@@ -11,7 +11,7 @@
     - name: Pass lightspeed_prompt to next workflow node
       ansible.builtin.set_stats:
         data:
-          lightspeed_prompt: "{{ gpt_generated_prompt }}"
+          lightspeed_prompt: "{{ gpt_generated_prompt | to_json }}"
 
     - name: Show the LLM response text
       ansible.builtin.debug:
