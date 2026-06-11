@@ -13,7 +13,7 @@
       action:
         run_workflow_template:
           organization: "Default"
-          name: "{{ workflow_template_name | default('Hold my beer') }}"
+          name: "{{ workflow_template_name | default('ZZ - Hold my beer') }}"
 
     - name: show event messages
       condition: event.body.message is defined
